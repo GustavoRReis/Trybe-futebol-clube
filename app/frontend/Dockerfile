@@ -1,0 +1,14 @@
+FROM node:16.14-alpine
+
+WORKDIR /app-frontend
+
+COPY package* ./
+
+RUN ["npm", "i"]
+
+COPY . /app-frontend/
+
+EXPOSE 3000
+
+ENTRYPOINT ["npm", "start"]
+
